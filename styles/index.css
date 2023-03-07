@@ -1,0 +1,112 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "GoogleSans";
+  src: url(../assets/fonts/GoogleSans-Regular-v1.27.ttf) format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "GoogleSans";
+  src: url(../assets/fonts/GoogleSans-Medium-v1.27.ttf) format("truetype");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "GoogleSans";
+  src: url(../assets/fonts/GoogleSans-Bold-v1.27.ttf) format("truetype");
+  font-weight: 700;
+}
+nav {
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 60px;
+}
+nav .logo {
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+nav .logo img {
+  width: 100%;
+}
+nav .mainMenu {
+  display: flex;
+  list-style-type: none;
+}
+nav .mainMenu li a {
+  display: inline-block;
+  padding: 15px;
+  text-decoration: none;
+  color: #4a5568;
+  font-size: 20px;
+  font-family: "GoogleSans";
+}
+nav .mainMenu li a :hover {
+  background-color: red;
+}
+nav .mainMenu .closeMenu {
+  color: white;
+  font-size: 2rem;
+  display: none;
+  cursor: pointer;
+}
+nav .mainMenu .icons i {
+  font-size: 2rem;
+  display: none;
+  cursor: pointer;
+  color: #fff;
+}
+nav .openMenu {
+  font-size: 2rem;
+  margin: 20px;
+  display: none;
+  cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  nav {
+    padding: 10px 20px;
+  }
+  nav .mainMenu {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #4a5568;
+    transition: all 0.6s cubic-bezier(0, 0.55, 0.45, 1);
+    opacity: 0;
+    pointer-events: none;
+  }
+  nav .mainMenu .closeMenu {
+    display: block;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+  }
+  nav .mainMenu li a {
+    color: #fff;
+  }
+  nav .mainMenu li a :hover {
+    background-color: none;
+    color: rgb(255, 149, 0);
+    font-size: 1.6rem;
+  }
+  nav .mainMenu .icons i {
+    display: inline-block;
+    padding: 12px;
+  }
+  nav .openMenu {
+    display: block;
+  }
+}/*# sourceMappingURL=index.css.map */

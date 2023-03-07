@@ -1,0 +1,123 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: "GoogleSans";
+  src: url(../assets/fonts/GoogleSans-Regular-v1.27.ttf) format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "GoogleSans";
+  src: url(../assets/fonts/GoogleSans-Medium-v1.27.ttf) format("truetype");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "GoogleSans";
+  src: url(../assets/fonts/GoogleSans-Bold-v1.27.ttf) format("truetype");
+  font-weight: 700;
+}
+
+$google-sans: "GoogleSans";
+
+// Colors
+$gray: #4a5568;
+
+nav {
+  background: #fff;
+  // color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 60px;
+
+  .logo {
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: 100%;
+    }
+  }
+  .mainMenu {
+    display: flex;
+    list-style-type: none;
+    li a {
+      display: inline-block;
+      padding: 15px;
+      text-decoration: none;
+      color: $gray;
+      font-size: 20px;
+      font-family: $google-sans;
+      :hover {
+        background-color: red;
+      }
+    }
+    .closeMenu {
+      color: white;
+      font-size: 2rem;
+      display: none;
+      cursor: pointer;
+    }
+    .icons i {
+      font-size: 2rem;
+      display: none;
+      cursor: pointer;
+      color: #fff;
+    }
+  }
+  .openMenu {
+    font-size: 2rem;
+    margin: 20px;
+    display: none;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 800px) {
+  nav {
+    padding: 10px 20px;
+    .mainMenu {
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 10;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: $gray;
+      transition: all 0.6s cubic-bezier(0, 0.55, 0.45, 1);
+
+      // display: none;
+      opacity: 0;
+      pointer-events: none;
+      .closeMenu {
+        display: block;
+        position: absolute;
+        top: 40px;
+        right: 40px;
+      }
+      li {
+        a {
+          color: #fff;
+          :hover {
+            background-color: none;
+            color: rgb(255, 149, 0);
+            font-size: 1.6rem;
+          }
+        }
+      }
+      .icons i {
+        display: inline-block;
+        padding: 12px;
+      }
+    }
+    .openMenu {
+      display: block;
+    }
+  }
+}
