@@ -23,10 +23,13 @@ $google-sans: "GoogleSans";
 
 // Colors
 $gray: #4a5568;
+$blue: #4285f4;
+$yellow: #fbbc04;
+$red: #ea4335;
+$green: #34a853;
 
 nav {
   background: #fff;
-  // color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -73,12 +76,28 @@ nav {
     margin: 20px;
     display: none;
     cursor: pointer;
+    color: $gray;
+  }
+  .join-btn {
+    font-family: $google-sans;
+    color: #fff;
+    background-color: $blue;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 25px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
   }
 }
 
 @media (max-width: 800px) {
   nav {
-    padding: 10px 20px;
+    .join-btn {
+      display: none;
+    }
+    padding: 10px;
     .mainMenu {
       height: 100vh;
       position: fixed;
